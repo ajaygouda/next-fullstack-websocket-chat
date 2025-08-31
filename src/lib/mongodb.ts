@@ -5,7 +5,6 @@ const PASSWORD = process.env.MONGODB_PASSWORD;
 
 
 const MONGODB_URI = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.ennnwrd.mongodb.net/PGDB?retryWrites=true&w=majority`
-console.log("MONGODB_URI", MONGODB_URI)
 let isConnected = false;
 
 export default async function dbConnect() {
