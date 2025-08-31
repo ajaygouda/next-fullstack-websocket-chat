@@ -4,7 +4,7 @@ import ChatBoardHeader from "./chatBoardHeader";
 import ChatType from "./chatType";
 import { IMessage } from "@/types/IMessage";
 import { getSocket } from "@/lib/socket-client";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 export default function ChatBoard({ receiver, sender }: any) {
     const [chats, setChats] = useState<IMessage[]>([]);

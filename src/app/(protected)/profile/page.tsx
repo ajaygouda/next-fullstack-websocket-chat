@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const ProfilePage = () => {
     const [user, setUser] = useState<any>({});
@@ -85,7 +85,7 @@ const ProfilePage = () => {
             console.log(err)
         }
     }
-    
+
     return (
         <div className="flex-column text-sm font-medium text-gray-900 dark:text-white w-72 h-[100vh] bg-gray-200">
             <div className="h-16 flex items-center px-4">
