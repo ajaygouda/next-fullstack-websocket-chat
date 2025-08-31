@@ -98,7 +98,7 @@ const Register = () => {
                 </div>
                 <div className="mb-5 w-[100%]">
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                    <input onChange={(e) => handleChange(e)} type="email" name="email" value={form.email} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="johndoe@gmail.com" required />
+                    <input onChange={(e) => handleChange(e)} type="email" name="email" value={form.email} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                 </div>
                 <div className="mb-5 w-[100%]">
                     <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
@@ -106,11 +106,11 @@ const Register = () => {
                 </div>
                 <div className="mb-5 w-[100%]">
                     <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
-                    <input onChange={(e) => handleChange(e)} type="text" name="username" value={form.username} id="username" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Doe" required />
+                    <input onChange={(e) => handleChange(e)} type="text" name="username" value={form.username} id="username" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                 </div>
                 <div className="mb-5 w-[100%]">
                     <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-                    <input onChange={(e) => handleChange(e)} maxLength={10} type="text" name="phone" value={form.phone} id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="00000 00000" required />
+                    <input onChange={(e) => handleChange(e)} maxLength={10} type="text" name="phone" value={form.phone} id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                 </div>
                 <button disabled={!isvalidate} type="submit" className={`${isvalidate ? "cursor-pointer  bg-blue-500 hover:bg-blue-700 text-white" : "bg-gray-200"} focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center`}>Register</button>
                 {/* <p className="py-4 w-full text-right"><Link className="cursor-pointer text-blue-500" href={"/register"}>Forgot Password</Link></p> */}

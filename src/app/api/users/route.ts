@@ -6,7 +6,6 @@ export async function GET() {
 
   const cookieStore:any = cookies();
   const token = cookieStore.get("token")?.value;
-    console.log("cookieStore")
 
     if (!token) {
         return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });

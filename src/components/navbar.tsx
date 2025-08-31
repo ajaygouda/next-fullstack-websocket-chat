@@ -21,7 +21,6 @@ export default function Navbar() {
         try {
             const res = await fetch("/api/auth/logout", { method: "POST" });
             const data = await res.json();
-            console.log(data.message);
             // Redirect to login page
             window.location.href = "/login";
         } catch (err) {

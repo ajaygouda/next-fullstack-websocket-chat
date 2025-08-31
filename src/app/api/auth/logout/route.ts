@@ -1,4 +1,3 @@
-// src/app/api/auth/logout/route.ts
 import { NextResponse } from "next/server";
 
 export async function POST() {
@@ -11,7 +10,7 @@ export async function POST() {
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 0, // 1 hour
+            expires: new Date(0), 
         });
 
         return response
