@@ -61,7 +61,7 @@ const Register = () => {
     const handleRegister = async (e: any) => {
         e.preventDefault();
         try {
-            const res = await fetch("/api/auth/register", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form), // <-- stringify the form object

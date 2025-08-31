@@ -4,6 +4,7 @@ import ChatBoardHeader from "./chatBoardHeader";
 import ChatType from "./chatType";
 import { IMessage } from "@/types/IMessage";
 import { getSocket } from "@/lib/socket-client";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export default function ChatBoard({ receiver, sender }: any) {
     const [chats, setChats] = useState<IMessage[]>([]);
@@ -24,7 +25,7 @@ export default function ChatBoard({ receiver, sender }: any) {
         const fetchMessages = async () => {
             try {
                 const response = await fetch(
-                    `/api/messages?senderId=${sender._id}&receiverId=${receiver._id}`
+                    `${BASE_URL}/messages?senderId=${sender._id}&receiverId=${receiver._id}`
                 );
                 const data = await response.json();
                 if (data.messages) {
@@ -105,7 +106,7 @@ export default function ChatBoard({ receiver, sender }: any) {
 
             try {
                 // Send message via API
-                const response = await fetch("/api/messages", {
+                const response = await fetch(`${BASE_URL}/messages`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

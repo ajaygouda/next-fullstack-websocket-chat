@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 const ProfilePage = () => {
     const [user, setUser] = useState<any>({});
@@ -51,7 +52,7 @@ const ProfilePage = () => {
         }
 
         try {
-            const res = await fetch("/api/auth/register", {
+            const res = await fetch(`${BASE_URL}/auth/register`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),
@@ -73,7 +74,7 @@ const ProfilePage = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch("/api/auth/logout", {
+            const res = await fetch(`${BASE_URL}/auth/logout`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
             });
@@ -84,7 +85,7 @@ const ProfilePage = () => {
             console.log(err)
         }
     }
-            console.log(user)
+    
     return (
         <div className="flex-column text-sm font-medium text-gray-900 dark:text-white w-72 h-[100vh] bg-gray-200">
             <div className="h-16 flex items-center px-4">
@@ -139,7 +140,7 @@ const ProfilePage = () => {
                     <div>
                         <label className="text-gray-500 mb-3 block">New Password</label>
                         <p className="text-[16px] flex items-center justify-between">
-                            {editType && editType === "password" ? <input name="password"  value={user?.password || ""}  type="text" placeholder="******" className="border-b border-gray-500 focus-visible:outline-none" onChange={(e) => setUser((prev: any) => ({ ...prev, password: e.target.value }))} /> : "******"}
+                            {editType && editType === "password" ? <input name="password" value={user?.password || ""} type="text" placeholder="******" className="border-b border-gray-500 focus-visible:outline-none" onChange={(e) => setUser((prev: any) => ({ ...prev, password: e.target.value }))} /> : "******"}
                             {editType && editType === "password" ?
                                 <span onClick={handleSave} className="h-7 w-7 flex items-center justify-center">
                                     <svg className="h-6 w-6 cursor-pointer text-gray-500 hover:text-gray-700" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 16.2-3.5-3.5a.984.984 0 0 0-1.4 0c-.39.39-.39 1.01 0 1.4l4.19 4.19c.39.39 1.02.39 1.41 0L20.3 7.7c.39-.39.39-1.01 0-1.4a.984.984 0 0 0-1.4 0z"></path></svg>

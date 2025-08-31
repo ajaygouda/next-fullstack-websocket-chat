@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export default function Navbar() {
     const [user, setUser] = useState<any>();
@@ -19,7 +20,7 @@ export default function Navbar() {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch("/api/auth/logout", { method: "POST" });
+            const res = await fetch(`${BASE_URL}/auth/logout`, { method: "POST" });
             const data = await res.json();
             // Redirect to login page
             window.location.href = "/login";

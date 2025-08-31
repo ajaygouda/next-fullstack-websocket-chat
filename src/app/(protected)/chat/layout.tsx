@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ChatSidebar from "./chatSidebar";
 import { IUser } from "@/types/IUser";
 import CharBoard from "./chatBoard";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export default function ChatLayout() {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -16,7 +17,7 @@ export default function ChatLayout() {
         setSender(loggedUser);
 
         const fetchUsers = async () => {
-            const users = await fetch("http://localhost:3000/api/users", {
+            const users = await fetch(`${BASE_URL}/users`, {
                 method: "GET",
                 credentials: "include",
             });
